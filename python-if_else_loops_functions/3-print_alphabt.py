@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 for c in range(97, 123):
-    print("{}".format(chr(c)) if chr(c) not in "qe" else "", end="")
-
+    if c != 101 and c != 113:
+        print("{}".format(chr(c)), end="")
+        
