@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def fizzbuzz():
+    """1-dən 100-ə qədər ədədləri Fizz/Buzz qaydasına görə çap edir."""
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
             print("FizzBuzz", end=" ")
@@ -9,4 +10,3 @@ def fizzbuzz():
             print("Buzz", end=" ")
         else:
             print(i, end=" ")
-fizzbuzz()
