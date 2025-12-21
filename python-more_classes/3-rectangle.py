@@ -1,23 +1,25 @@
 #!/usr/bin/python3
-"""Rectangle sinfini təyin edir"""
+"""Module that defines a Rectangle class with width, height, and
+string representation."""
 
 
 class Rectangle:
-    """Düzbucaqlı (Rectangle) sinfi"""
+    """Rectangle class that defines a rectangle by width and height."""
 
     def __init__(self, width=0, height=0):
-        """Rectangle obyektini yaradır"""
+        """Initialize a new Rectangle instance with optional width
+        and height."""
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """width dəyərini qaytarır"""
+        """Retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """width dəyərini təyin edir"""
+        """Set the width of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -26,12 +28,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """height dəyərini qaytarır"""
+        """Retrieve the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height dəyərini təyin edir"""
+        """Set the height of the rectangle with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -39,19 +41,23 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Düzbucaqlının sahəsini qaytarır"""
-        return self.__width * self.__height
+        """Return the area of the rectangle."""
+        return self.width * self.height
 
     def perimeter(self):
-        """Düzbucaqlının perimetrini qaytarır"""
-        if self.__width == 0 or self.__height == 0:
+        """Return the perimeter of the rectangle."""
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Düzbucaqlını # işarəsi ilə çap edir"""
-        if self.__width == 0 or self.__height == 0:
+        """Return the rectangle as a string of # characters."""
+        if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+        lines = ["#" * self.width for _ in range(self.height)]
+        return "\n".join(lines)
 
-    def __re
+    def __repr__(self):
+        """Return a string representation to recreate a new instance."""
+        return "{}({:d}, {:d})".format(self.__class__.__name__,
+                                       self.width, self.height)
