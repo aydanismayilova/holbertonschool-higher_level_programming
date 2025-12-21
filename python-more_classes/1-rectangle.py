@@ -26,4 +26,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """height dəyərini qaytarır""
+        """height dəyərini qaytarır"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """height dəyərini təyin edir"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must
