@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module defines a Rectangle class with width and height,
+supports area, perimeter, comparison, and tracks instances."""
+
 class Rectangle:
     """Defines a rectangle with width and height, tracks instances, and supports comparison."""
     
