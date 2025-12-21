@@ -32,4 +32,30 @@ class Rectangle:
     def height(self, value):
         """Set the height of the rectangle with validation."""
         if not isinstance(value, int):
-            raise TypeError("height must be an integer"
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
+    def area(self):
+        """Return the area of the rectangle."""
+        return self.width * self.height
+
+    def perimeter(self):
+        """Return the perimeter of the rectangle."""
+        if self.width == 0 or self.height == 0:
+            return 0
+        return 2 * (self.width + self.height)
+
+    def __str__(self):
+        """Return the rectangle as a string of # characters."""
+        if self.width == 0 or self.height == 0:
+            return ""
+        return "\n".join(["#" * self.width for _ in range(self.height)])
+
+    def __repr__(self):
+        """Return a string representation to recreate a new instance."""
+        return "Rectangle({}, {})".format(self.width, self.height)
+
+    def __del__(self):
+        """Print a message w
