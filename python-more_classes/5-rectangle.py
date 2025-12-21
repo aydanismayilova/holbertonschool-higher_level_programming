@@ -44,14 +44,4 @@ class Rectangle:
 
     def perimeter(self):
         """Düzbucaqlının perimetrini qaytarır"""
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return 2 * (self.__width + self.__height)
-
-    def __str__(self):
-        """Düzbucaqlını # işarəsi ilə çap edir"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
-
-    def __re
+        if self.__width == 0 or sel
