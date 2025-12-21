@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines a Rectangle class with width and height."""
 
+
 class Rectangle:
     """Rectangle class that defines a rectangle by width and height."""
 
@@ -51,7 +52,8 @@ class Rectangle:
         """Return the rectangle as a string of # characters."""
         if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join(["#" * self.width for _ in range(self.height)])
+        lines = ["#" * self.width for _ in range(self.height)]
+        return "\n".join(lines)
 
     def __repr__(self):
         """Return a string representation to recreate a new instance."""
